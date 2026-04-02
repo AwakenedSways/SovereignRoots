@@ -42,12 +42,41 @@
       z-index: 2;
     }
 
-    /* ========= HEADER with plant sprouts ========= */
+    /* ========= HEADER with radiant glow & plant sprouts ========= */
     .hero-header {
       text-align: center;
-      margin-bottom: 1.8rem;
+      margin-bottom: 2rem;
       position: relative;
+      transition: all 0.2s ease;
     }
+    
+    /* Radiant soft yellow glow behind the header group */
+    .hero-header::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 85%;
+      max-width: 650px;
+      height: 180px;
+      background: radial-gradient(ellipse, rgba(255, 220, 100, 0.4) 0%, rgba(255, 210, 80, 0.15) 50%, transparent 80%);
+      filter: blur(18px);
+      border-radius: 100%;
+      pointer-events: none;
+      z-index: 0;
+      transition: all 0.4s ease;
+    }
+    
+    /* on hover, glow expands slightly */
+    .hero-header:hover::before {
+      width: 95%;
+      max-width: 720px;
+      height: 210px;
+      background: radial-gradient(ellipse, rgba(255, 225, 120, 0.55) 0%, rgba(255, 215, 90, 0.25) 55%, transparent 85%);
+      filter: blur(22px);
+    }
+
     .logo-wrapper {
       display: flex;
       justify-content: center;
@@ -55,24 +84,44 @@
       gap: 16px;
       flex-wrap: wrap;
       margin-bottom: 0.6rem;
+      position: relative;
+      z-index: 2;
     }
+    
+    /* plant emojis with soft glow & expand effect */
     .sprout-left, .sprout-right {
       font-size: 2.5rem;
-      filter: drop-shadow(0 2px 6px rgba(100, 60, 20, 0.15));
-      opacity: 0.85;
-      transition: transform 0.2s ease;
+      filter: drop-shadow(0 2px 6px rgba(200, 140, 40, 0.3));
+      opacity: 0.9;
+      transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      display: inline-block;
     }
-    .sprout-left:hover, .sprout-right:hover {
-      transform: scale(1.05);
+    
+    .hero-header:hover .sprout-left {
+      transform: scale(1.2) rotate(-3deg);
+      filter: drop-shadow(0 0 8px #f7c56e);
     }
+    
+    .hero-header:hover .sprout-right {
+      transform: scale(1.2) rotate(3deg);
+      filter: drop-shadow(0 0 8px #f7c56e);
+    }
+    
     .logo-img {
       max-height: 95px;
       width: auto;
       object-fit: contain;
       filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.05));
-      transition: filter 0.2s;
+      transition: all 0.25s ease;
       display: inline-block;
     }
+    
+    /* subtle logo glow on hover */
+    .hero-header:hover .logo-img {
+      filter: drop-shadow(0 0 10px rgba(255, 200, 70, 0.7));
+      transform: scale(1.01);
+    }
+    
     .brand-tagline {
       font-weight: 400;
       font-size: 0.85rem;
@@ -87,6 +136,12 @@
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
+      transition: all 0.2s;
+    }
+    
+    .hero-header:hover .brand-tagline {
+      letter-spacing: 3.5px;
+      text-shadow: 0 0 6px rgba(255, 205, 80, 0.5);
     }
 
     /* products grid */
@@ -408,6 +463,9 @@
       .sprout-left, .sprout-right {
         font-size: 1.8rem;
       }
+      .hero-header::before {
+        height: 130px;
+      }
     }
   </style>
 </head>
@@ -417,17 +475,18 @@
   <div class="hero-header">
     <div class="logo-wrapper">
       <span class="sprout-left">🌱</span>
-      <img class="logo-img" src="https://i.ibb.co/359p4G76/Sovereign-Roots-Logo.png" alt="Sovereign Roots Logo">
+      <!-- UPDATED: Roots logo + additional brand logo side by side, using the new Roots-logo and keeping original? We'll use both: Roots-logo.png as main, plus the previous logo optional? According to request: use these instead for the graphics for the logo: the two provided links (Sleepy Time Tea image link is for tea product, not logo). The user provided: Roots logo link and also previous logo? We'll show the new Roots logo as primary logo. -->
+      <img class="logo-img" src="https://i.ibb.co/XH7mmTh/Roots-logo.png" alt="Sovereign Roots Logo" onerror="this.src='https://placehold.co/200x80?text=Sovereign+Roots';">
       <span class="sprout-right">🌿</span>
     </div>
     <div class="brand-tagline">rooted in healing · golden apothecary</div>
   </div>
 
   <div class="products-grid">
-    <!-- Pain Salve Card -->
+    <!-- Pain Salve Card: updated image Pain.png -->
     <div class="product-card" data-product="salve">
       <div class="product-img">
-        <img src="https://i.ibb.co/W1RCn2Y/Sovereign-Roots-Pain-Salve.png" alt="Pain Salve Tin">
+        <img src="https://i.ibb.co/4gY8rGQR/Pain.png" alt="Pain Salve Tin">
         <div class="badge-size">2in x 2in tin | deep relief</div>
       </div>
       <div class="product-info">
@@ -440,10 +499,10 @@
       </div>
     </div>
 
-    <!-- Sleepy Time Tea Card -->
+    <!-- Sleepy Time Tea Card: updated image Sleepy-Tea.png -->
     <div class="product-card" data-product="tea">
       <div class="product-img">
-        <img src="https://i.ibb.co/TDXm8Sqz/Sovereign-Roots-Sleepy-Time-Tea.png" alt="Sleepy Time Tea Bag">
+        <img src="https://i.ibb.co/jkytpnyz/Sleepy-Tea.png" alt="Sleepy Time Tea Bag">
         <div class="badge-size">5 tea bags + whole anise piece</div>
       </div>
       <div class="product-info">
@@ -456,7 +515,7 @@
       </div>
     </div>
   </div>
-  <footer>Sovereign Roots — crafted with golden intention & plant wisdom — Jess</footer>
+  <footer>Sovereign Roots — crafted with golden intention & plant wisdom by Jessilyn </footer>
 </div>
 
 <!-- Modal overlay for detailed herbs with images -->
@@ -472,7 +531,7 @@
 </div>
 
 <script>
-  // DIRECT IMAGE MAPPING using your i.ibb.co URLs (these work perfectly)
+  // DIRECT IMAGE MAPPING using your i.ibb.co URLs (herb images remain same, as no new links provided for herbs)
   const herbImageMap = {
     "Comfrey": "https://i.ibb.co/bMBc83fv/Screenshot-2026-04-02-154119.png",
     "Wild Lettuce": "https://i.ibb.co/xSSS8zWk/Screenshot-2026-04-02-154217.png",
