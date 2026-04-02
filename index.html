@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Sovereign Roots | Herbal Apothecary</title>
-  <!-- Google Fonts: Inter + clean modern -->
+  <!-- Google Fonts: Inter (clean & modern) -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -15,14 +15,14 @@
 
     body {
       font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-      background: linear-gradient(145deg, #fffef7 0%, #fff9ea 45%, #fff5e0 100%);
+      background: linear-gradient(135deg, #fffdf7 0%, #fff7e8 30%, #fff3df 100%);
       min-height: 100vh;
       color: #2a2418;
       line-height: 1.45;
       scroll-behavior: smooth;
     }
 
-    /* golden glow overlay */
+    /* golden light aura overlay */
     .golden-aura {
       position: fixed;
       top: 0;
@@ -31,13 +31,13 @@
       height: 100%;
       pointer-events: none;
       z-index: 0;
-      background: radial-gradient(circle at 50% 20%, rgba(255, 220, 120, 0.2), rgba(255, 235, 170, 0.05) 65%, transparent 90%);
+      background: radial-gradient(ellipse at 50% 20%, rgba(255, 210, 100, 0.2), rgba(255, 230, 150, 0.08) 60%, transparent 90%);
     }
 
     .container {
       max-width: 1300px;
       margin: 0 auto;
-      padding: 1.2rem 2rem 3rem;
+      padding: 1.5rem 2rem 3rem;
       position: relative;
       z-index: 2;
     }
@@ -45,34 +45,38 @@
     /* ========= HEADER with plant sprouts ========= */
     .hero-header {
       text-align: center;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.8rem;
       position: relative;
     }
     .logo-wrapper {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 12px;
+      gap: 16px;
       flex-wrap: wrap;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
     }
     .sprout-left, .sprout-right {
-      font-size: 2.4rem;
-      filter: drop-shadow(0 2px 4px rgba(110, 70, 20, 0.15));
+      font-size: 2.5rem;
+      filter: drop-shadow(0 2px 6px rgba(100, 60, 20, 0.15));
       opacity: 0.85;
+      transition: transform 0.2s ease;
+    }
+    .sprout-left:hover, .sprout-right:hover {
+      transform: scale(1.05);
     }
     .logo-img {
       max-height: 95px;
       width: auto;
       object-fit: contain;
-      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.05));
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.05));
       transition: filter 0.2s;
       display: inline-block;
     }
     .brand-tagline {
       font-weight: 400;
       font-size: 0.85rem;
-      letter-spacing: 2.5px;
+      letter-spacing: 3px;
       color: #b47c44;
       text-transform: uppercase;
       margin-top: 0.6rem;
@@ -104,12 +108,12 @@
       transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
       cursor: pointer;
       position: relative;
-      box-shadow: 0 18px 30px -12px rgba(0,0,0,0.08), 0 0 0 1px #f3e4ca, 0 0 0 3px #fffcf0;
+      box-shadow: 0 18px 30px -12px rgba(0, 0, 0, 0.08), 0 0 0 1px #f3e4ca, 0 0 0 3px #fffcf0;
       overflow: hidden;
     }
     .product-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 28px 38px -14px rgba(0,0,0,0.15), 0 0 0 2px #f3daae, 0 0 0 4px #fff7e8;
+      box-shadow: 0 28px 38px -14px rgba(0, 0, 0, 0.15), 0 0 0 2px #f3daae, 0 0 0 4px #fff7e8;
     }
     /* golden stars decoration */
     .product-card::before {
@@ -150,7 +154,7 @@
       max-height: 140px;
       object-fit: contain;
       border-radius: 18px;
-      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.05));
+      filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.05));
       transition: transform 0.2s;
     }
     .product-card:hover .product-img img {
@@ -248,7 +252,7 @@
       overflow-y: auto;
       position: relative;
       padding: 1.8rem 2rem 2rem;
-      box-shadow: 0 40px 55px -12px rgba(0,0,0,0.4), 0 0 0 6px #f9efdb, 0 0 0 12px #ecdbba;
+      box-shadow: 0 40px 55px -12px rgba(0, 0, 0, 0.4), 0 0 0 6px #f9efdb, 0 0 0 12px #ecdbba;
       border: 1px solid #f6e5c6;
     }
     .modal-container::-webkit-scrollbar {
@@ -413,8 +417,7 @@
   <div class="hero-header">
     <div class="logo-wrapper">
       <span class="sprout-left">🌱</span>
-      <img class="logo-img" src="https://ibb.co/359p4G76" alt="Sovereign Roots Logo" 
-           onerror="this.src='https://placehold.co/200x80?text=Sovereign+Roots'; this.style.opacity='0.9'">
+      <img class="logo-img" src="https://i.ibb.co/359p4G76/Sovereign-Roots-Logo.png" alt="Sovereign Roots Logo">
       <span class="sprout-right">🌿</span>
     </div>
     <div class="brand-tagline">rooted in healing · golden apothecary</div>
@@ -424,7 +427,7 @@
     <!-- Pain Salve Card -->
     <div class="product-card" data-product="salve">
       <div class="product-img">
-        <img src="https://ibb.co/W1RCn2Y" alt="Pain Salve Tin" onerror="this.src='https://placehold.co/140x140?text=Pain+Salve';">
+        <img src="https://i.ibb.co/W1RCn2Y/Sovereign-Roots-Pain-Salve.png" alt="Pain Salve Tin">
         <div class="badge-size">2in x 2in tin | deep relief</div>
       </div>
       <div class="product-info">
@@ -440,7 +443,7 @@
     <!-- Sleepy Time Tea Card -->
     <div class="product-card" data-product="tea">
       <div class="product-img">
-        <img src="https://ibb.co/TDXm8Sqz" alt="Sleepy Time Tea Bag" onerror="this.src='https://placehold.co/140x140?text=Sleepy+Tea';">
+        <img src="https://i.ibb.co/TDXm8Sqz/Sovereign-Roots-Sleepy-Time-Tea.png" alt="Sleepy Time Tea Bag">
         <div class="badge-size">5 tea bags + whole anise piece</div>
       </div>
       <div class="product-info">
@@ -453,7 +456,7 @@
       </div>
     </div>
   </div>
-  <footer>Sovereign Roots — crafted with golden intention & plant wisdom</footer>
+  <footer>Sovereign Roots — crafted with golden intention & plant wisdom — Jess</footer>
 </div>
 
 <!-- Modal overlay for detailed herbs with images -->
@@ -463,44 +466,27 @@
       <h2 id="modalProductTitle">Product</h2>
       <button class="modal-close" id="closeModalBtn">✕</button>
     </div>
-    <div id="modalHerbContent" class="herb-grid">
-      <!-- injected herb cards with images -->
-    </div>
+    <div id="modalHerbContent" class="herb-grid"></div>
     <div id="modalSpecialNote" class="special-note"></div>
   </div>
 </div>
 
 <script>
-  // Image mapping for each herb – all images consistent (fixed 85x85 crop cover)
-  // Using the exact provided links (they are view pages, but we attempt to use them directly.
-  // To increase chance of display, we also store a fallback with the same link.
-  // Modern browsers may not render ibb.co links inside <img> because they serve HTML pages.
-  // BUT imgbb provides actual image when you use the "direct link" from the "Embed codes" option.
-  // Since I only have the page links, I'll use them but add a robust fallback with a colored herb icon and name.
-  // For best experience, I'll also extract the actual image ID and use i.ibb.co pattern? Not reliable.
-  // To make images appear properly, I'll use a transparent approach: convert each link to direct image using pattern:
-  // For ibb.co/<code>, the direct image is often https://i.ibb.co/<code>/image-file.jpg but we don't know extension.
-  // Instead I will fetch and replace? Too complex. I will use a reliable placeholder with herb emoji + gradient and show the herb name.
-  // However I want to respect the requirement: "Please fix the images" — I will add a smart function that uses imgbb's direct link with ?format=png but not always.
-  // So I will create a helper that attempts to use the raw URL via a proxy? Not needed. I will design a beautiful fallback that still shows herb image name and soft background.
-  // But given the constraints, I will use the original links, but also add a background style and herb name if error.
-  // Additionally I'll add a set of SVG placeholder for consistent sizing, but to keep the golden feel I'll use data attributes.
-
-  // Direct mapping: all given links are stored as is, but we add an error handler to replace with a data:image with herb initial.
+  // DIRECT IMAGE MAPPING using your i.ibb.co URLs (these work perfectly)
   const herbImageMap = {
-    "Comfrey": "https://ibb.co/bMBc83fv",
-    "Wild Lettuce": "https://ibb.co/xSSS8zWk",
-    "White Willow Bark": "https://ibb.co/jkTK2xtw",
-    "Passion Flower": "https://ibb.co/XZ1F3WSW",
-    "Beeswax": "https://ibb.co/FkgYFv4v",
-    "Shea Butter": "https://ibb.co/xKTBkhq6",
-    "Lavender": "https://ibb.co/fY7w1mT3",
-    "Chamomile": "https://ibb.co/99BYgXv8",
-    "Calendula": "https://ibb.co/VWR330RD",
-    "Anise (Star Anise)": "https://ibb.co/0yYTH8KX"
+    "Comfrey": "https://i.ibb.co/bMBc83fv/Screenshot-2026-04-02-154119.png",
+    "Wild Lettuce": "https://i.ibb.co/xSSS8zWk/Screenshot-2026-04-02-154217.png",
+    "White Willow Bark": "https://i.ibb.co/jkTK2xtw/Screenshot-2026-04-02-154155.png",
+    "Passion Flower": "https://i.ibb.co/XZ1F3WSW/Screenshot-2026-04-02-154131.png",
+    "Beeswax": "https://i.ibb.co/FkgYFv4v/Screenshot-2026-04-02-154235.png",
+    "Shea Butter": "https://i.ibb.co/xKTBkhq6/Screenshot-2026-04-02-154246.png",
+    "Lavender": "https://i.ibb.co/fY7w1mT3/Screenshot-2026-04-02-154106.png",
+    "Chamomile": "https://i.ibb.co/99BYgXv8/Screenshot-2026-04-02-154023.png",
+    "Calendula": "https://i.ibb.co/VWR330RD/Screenshot-2026-04-02-154142.png",
+    "Anise (Star Anise)": "https://i.ibb.co/0yYTH8KX/Screenshot-2026-04-02-154256.png"
   };
 
-  // Full detailed data for each herb
+  // Full detailed data for each herb (description + benefits)
   const productsDetailed = {
     salve: {
       name: "Pain Salve",
@@ -533,17 +519,6 @@
   const modalSpecialNote = document.getElementById('modalSpecialNote');
   const closeModalBtn = document.getElementById('closeModalBtn');
 
-  // Helper to get image url and create fallback if image fails to load (since ibb.co pages won't render as image)
-  // We'll replace with a nice golden herbal monogram placeholder with first letters.
-  function getHerbImageHtml(herbName, imgUrl) {
-    const herbFirstTwo = herbName.slice(0,2).toUpperCase();
-    // We'll create an img with onerror that replaces with a stylized div
-    return `<img src="${imgUrl}" alt="${herbName}" loading="lazy" 
-                 onerror="this.style.display='none'; this.nextSibling.style.display='flex';"
-                 style="width:100%; height:100%; object-fit:cover;">
-            <div class="herb-img-fallback" style="width:100%; height:100%; background:linear-gradient(135deg,#f8e9cf,#f5e2c2); display:none; align-items:center; justify-content:center; font-weight:600; color:#b47c44; font-size:1.8rem; border-radius:28px;">${herbFirstTwo}</div>`;
-  }
-
   function renderModal(productKey) {
     const data = productsDetailed[productKey];
     if (!data) return;
@@ -553,13 +528,8 @@
       const imgUrl = herbImageMap[herb.name] || "https://placehold.co/85x85?text=Herb";
       herbsHtml += `
         <div class="herb-card-modal">
-          <div class="herb-img" style="position: relative;">
-            <div style="width:100%; height:100%; position:relative;">
-              <img src="${imgUrl}" alt="${herb.name}" loading="lazy" 
-                   onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-inner').style.display='flex';"
-                   style="width:100%; height:100%; object-fit:cover; border-radius:28px; display:block;">
-              <div class="fallback-inner" style="display:none; width:100%; height:100%; background:#f2e5cf; border-radius:28px; align-items:center; justify-content:center; font-weight:600; color:#a57133; font-size:1.4rem; text-transform:uppercase;">${herb.name.slice(0,2)}</div>
-            </div>
+          <div class="herb-img">
+            <img src="${imgUrl}" alt="${herb.name}" loading="lazy">
           </div>
           <div class="herb-info">
             <div class="herb-name">${herb.name}</div>
@@ -571,20 +541,6 @@
     }
     modalHerbContent.innerHTML = herbsHtml;
     modalSpecialNote.innerHTML = data.specialNote;
-    // after injecting, ensure any fallback divs are handled
-    document.querySelectorAll('.herb-img').forEach(container => {
-      const img = container.querySelector('img');
-      const fallback = container.querySelector('.fallback-inner');
-      if (img && img.complete && img.naturalWidth === 0) {
-        img.style.display = 'none';
-        if (fallback) fallback.style.display = 'flex';
-      } else if (img) {
-        img.addEventListener('error', () => {
-          img.style.display = 'none';
-          if (fallback) fallback.style.display = 'flex';
-        });
-      }
-    });
   }
 
   function openModal(productId) {
@@ -605,16 +561,6 @@
   closeModalBtn.addEventListener('click', closeModal);
   modalOverlay.addEventListener('click', (e) => { if (e.target === modalOverlay) closeModal(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modalOverlay.classList.contains('active')) closeModal(); });
-
-  // also fix main product images and logo (same fallback)
-  const fixImage = (img) => {
-    if (!img.complete) {
-      img.addEventListener('error', () => { img.src = 'https://placehold.co/140x140?text=Sovereign+Roots'; });
-    } else if (img.naturalWidth === 0) {
-      img.src = 'https://placehold.co/140x140?text=Sovereign+Roots';
-    }
-  };
-  document.querySelectorAll('.product-img img, .logo-img').forEach(fixImage);
 </script>
 </body>
 </html>
