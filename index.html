@@ -15,15 +15,18 @@
 
     body {
       font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #fffdf7 0%, #fff7e8 30%, #fff3df 100%);
-      min-height: 100vh;
+      background: #faf8f0;
+      /* Simple plant / leaf background pattern (subtle) */
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" opacity="0.08"><path fill="none" stroke="%233d5a3b" stroke-width="0.6" d="M25 40 Q35 28 45 38 Q55 48 62 42 M75 25 Q82 18 90 24 Q97 30 104 26 M18 85 Q28 72 38 82 Q46 90 52 84 M98 78 Q106 70 112 78 M55 95 Q62 88 70 94 M105 50 Q112 44 118 52 M8 50 Q16 42 22 50 M35 105 Q42 98 48 104"/><path d="M12 30 L18 24 L24 30 M88 12 L94 8 L100 14 M112 68 L118 64 L124 70 M64 18 L70 14 L76 20" stroke="%233d5a3b" fill="none" stroke-width="0.5"/><circle cx="30" cy="55" r="2" fill="%233d5a3b" opacity="0.4"/><circle cx="96" cy="40" r="1.8" fill="%233d5a3b" opacity="0.35"/><circle cx="45" cy="15" r="1.5" fill="%233d5a3b" opacity="0.3"/></svg>');
+      background-repeat: repeat;
+      background-size: 70px;
       color: #2a2418;
       line-height: 1.45;
       scroll-behavior: smooth;
     }
 
-    /* golden light aura overlay */
-    .golden-aura {
+    /* forest green + golden aura overlay */
+    .green-aura {
       position: fixed;
       top: 0;
       left: 0;
@@ -31,7 +34,7 @@
       height: 100%;
       pointer-events: none;
       z-index: 0;
-      background: radial-gradient(ellipse at 50% 20%, rgba(255, 210, 100, 0.2), rgba(255, 230, 150, 0.08) 60%, transparent 90%);
+      background: radial-gradient(ellipse at 50% 20%, rgba(85, 110, 55, 0.08), rgba(65, 85, 45, 0.03) 70%, transparent 95%);
     }
 
     .container {
@@ -50,7 +53,7 @@
       transition: all 0.2s ease;
     }
     
-    /* Radiant soft yellow glow behind the header group */
+    /* Radiant soft golden-green glow behind the header group */
     .hero-header::before {
       content: '';
       position: absolute;
@@ -60,7 +63,7 @@
       width: 85%;
       max-width: 650px;
       height: 180px;
-      background: radial-gradient(ellipse, rgba(255, 220, 100, 0.4) 0%, rgba(255, 210, 80, 0.15) 50%, transparent 80%);
+      background: radial-gradient(ellipse, rgba(155, 130, 70, 0.25) 0%, rgba(110, 90, 45, 0.1) 50%, transparent 80%);
       filter: blur(18px);
       border-radius: 100%;
       pointer-events: none;
@@ -68,12 +71,11 @@
       transition: all 0.4s ease;
     }
     
-    /* on hover, glow expands slightly */
     .hero-header:hover::before {
       width: 95%;
       max-width: 720px;
       height: 210px;
-      background: radial-gradient(ellipse, rgba(255, 225, 120, 0.55) 0%, rgba(255, 215, 90, 0.25) 55%, transparent 85%);
+      background: radial-gradient(ellipse, rgba(175, 145, 80, 0.3) 0%, rgba(125, 100, 55, 0.15) 55%, transparent 85%);
       filter: blur(22px);
     }
 
@@ -88,10 +90,9 @@
       z-index: 2;
     }
     
-    /* plant emojis with soft glow & expand effect */
     .sprout-left, .sprout-right {
       font-size: 2.5rem;
-      filter: drop-shadow(0 2px 6px rgba(200, 140, 40, 0.3));
+      filter: drop-shadow(0 2px 6px rgba(60, 80, 30, 0.3));
       opacity: 0.9;
       transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
       display: inline-block;
@@ -99,12 +100,12 @@
     
     .hero-header:hover .sprout-left {
       transform: scale(1.2) rotate(-3deg);
-      filter: drop-shadow(0 0 8px #f7c56e);
+      filter: drop-shadow(0 0 8px #9bb87a);
     }
     
     .hero-header:hover .sprout-right {
       transform: scale(1.2) rotate(3deg);
-      filter: drop-shadow(0 0 8px #f7c56e);
+      filter: drop-shadow(0 0 8px #9bb87a);
     }
     
     .logo-img {
@@ -116,9 +117,8 @@
       display: inline-block;
     }
     
-    /* subtle logo glow on hover */
     .hero-header:hover .logo-img {
-      filter: drop-shadow(0 0 10px rgba(255, 200, 70, 0.7));
+      filter: drop-shadow(0 0 10px rgba(130, 110, 60, 0.5));
       transform: scale(1.01);
     }
     
@@ -126,13 +126,13 @@
       font-weight: 400;
       font-size: 0.85rem;
       letter-spacing: 3px;
-      color: #b47c44;
+      color: #6e5a3a;
       text-transform: uppercase;
       margin-top: 0.6rem;
-      border-top: 1px solid #f2e2c0;
+      border-top: 1px solid #dad0ae;
       display: inline-block;
       padding-top: 0.7rem;
-      background: linear-gradient(120deg, #a5733a, #d6a14a);
+      background: linear-gradient(120deg, #6e5a3a, #9b8048);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
@@ -141,7 +141,7 @@
     
     .hero-header:hover .brand-tagline {
       letter-spacing: 3.5px;
-      text-shadow: 0 0 6px rgba(255, 205, 80, 0.5);
+      text-shadow: 0 0 6px rgba(130, 110, 60, 0.4);
     }
 
     /* products grid */
@@ -153,9 +153,9 @@
       margin: 3rem 0 2rem;
     }
 
-    /* cards with golden lining & stars */
+    /* cards with forest green & golden lining */
     .product-card {
-      background: rgba(255, 253, 245, 0.96);
+      background: rgba(255, 253, 245, 0.97);
       backdrop-filter: blur(0px);
       border-radius: 2rem;
       width: 380px;
@@ -163,23 +163,23 @@
       transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
       cursor: pointer;
       position: relative;
-      box-shadow: 0 18px 30px -12px rgba(0, 0, 0, 0.08), 0 0 0 1px #f3e4ca, 0 0 0 3px #fffcf0;
+      box-shadow: 0 18px 30px -12px rgba(0, 0, 0, 0.1), 0 0 0 2px #cbd7b8, 0 0 0 5px #fcf5e6;
       overflow: hidden;
     }
     .product-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 28px 38px -14px rgba(0, 0, 0, 0.15), 0 0 0 2px #f3daae, 0 0 0 4px #fff7e8;
+      box-shadow: 0 28px 38px -14px rgba(0, 0, 0, 0.18), 0 0 0 2px #a8b88a, 0 0 0 6px #fff8ea;
     }
-    /* golden stars decoration */
+    /* golden-green stars decoration */
     .product-card::before {
       content: "✧";
       position: absolute;
       top: 18px;
       right: 22px;
       font-size: 22px;
-      color: #d8b15e;
-      opacity: 0.8;
-      text-shadow: 0 0 3px #ffecb3;
+      color: #b8a462;
+      opacity: 0.85;
+      text-shadow: 0 0 3px #e2d8b0;
       z-index: 3;
     }
     .product-card::after {
@@ -188,16 +188,16 @@
       bottom: 18px;
       left: 22px;
       font-size: 20px;
-      color: #caa348;
-      opacity: 0.7;
+      color: #9c8a4a;
+      opacity: 0.75;
       z-index: 3;
     }
 
     .product-img {
-      background: linear-gradient(145deg, #fffaf0, #fff6e6);
+      background: linear-gradient(145deg, #fffaf0, #fef7e8);
       text-align: center;
       padding: 1.6rem 1rem 1rem;
-      border-bottom: 1px solid #f3e5ce;
+      border-bottom: 2px solid #dde2c8;
       min-height: 210px;
       display: flex;
       flex-direction: column;
@@ -218,12 +218,12 @@
     .badge-size {
       font-size: 0.7rem;
       font-weight: 500;
-      background: #eedfc2;
+      background: #e2e4ce;
       display: inline-block;
       padding: 0.2rem 0.9rem;
       border-radius: 60px;
       margin-top: 0.6rem;
-      color: #6d4b26;
+      color: #4a5a2e;
       letter-spacing: 0.3px;
     }
 
@@ -234,12 +234,12 @@
       font-size: 1.7rem;
       font-weight: 600;
       letter-spacing: -0.3px;
-      background: linear-gradient(135deg, #9e712e, #c99242);
+      background: linear-gradient(135deg, #6b7a3a, #9b8a4a);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
       margin-bottom: 0.6rem;
-      border-left: 4px solid #eac883;
+      border-left: 4px solid #bccf96;
       padding-left: 12px;
     }
     .short-desc {
@@ -250,7 +250,7 @@
       padding: 0.7rem 1rem;
       border-radius: 28px;
       margin: 0.7rem 0 0.8rem;
-      border: 1px solid #f9e9cf;
+      border: 1px solid #e2e8cc;
     }
     .ingredients-list-short {
       display: flex;
@@ -259,32 +259,32 @@
       margin-top: 0.5rem;
     }
     .ingredients-list-short span {
-      background: #fbf4e6;
+      background: #f3f4e6;
       font-size: 0.7rem;
       font-weight: 500;
       padding: 0.2rem 0.8rem;
       border-radius: 40px;
-      color: #7a582f;
+      color: #5e6e3a;
     }
     .click-hint {
       margin-top: 1.2rem;
       text-align: center;
       font-size: 0.7rem;
       font-weight: 500;
-      color: #bb924e;
-      border-top: 1px solid #f0e0c2;
+      color: #8f7a42;
+      border-top: 1px solid #e2e0c8;
       padding-top: 0.8rem;
       letter-spacing: 0.3px;
     }
 
-    /* MODAL refined */
+    /* MODAL refined with forest green borders */
     .modal-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(25, 18, 8, 0.75);
+      background: rgba(30, 35, 20, 0.85);
       backdrop-filter: blur(6px);
       display: flex;
       align-items: center;
@@ -303,29 +303,29 @@
       width: 92%;
       max-width: 800px;
       max-height: 85vh;
-      border-radius: 2rem;
       overflow-y: auto;
       position: relative;
       padding: 1.8rem 2rem 2rem;
-      box-shadow: 0 40px 55px -12px rgba(0, 0, 0, 0.4), 0 0 0 6px #f9efdb, 0 0 0 12px #ecdbba;
-      border: 1px solid #f6e5c6;
+      box-shadow: 0 40px 55px -12px rgba(0, 0, 0, 0.4), 0 0 0 6px #ece2c2, 0 0 0 12px #bdcb98;
+      border: 1px solid #dee2be;
+      border-radius: 2rem;
     }
     .modal-container::-webkit-scrollbar {
       width: 5px;
     }
     .modal-container::-webkit-scrollbar-track {
-      background: #f2e5d2;
+      background: #ece4ce;
       border-radius: 10px;
     }
     .modal-container::-webkit-scrollbar-thumb {
-      background: #cfaa6b;
+      background: #9bae6a;
       border-radius: 10px;
     }
     .modal-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      border-bottom: 2px solid #f0dfbe;
+      border-bottom: 2px solid #dee2be;
       padding-bottom: 0.7rem;
       margin-bottom: 1.5rem;
       flex-wrap: wrap;
@@ -333,7 +333,7 @@
     .modal-header h2 {
       font-size: 2rem;
       font-weight: 600;
-      background: linear-gradient(120deg, #9c6e32, #cb9f54);
+      background: linear-gradient(120deg, #6b7a3a, #9b8a4a);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
@@ -343,12 +343,12 @@
       border: none;
       font-size: 2rem;
       cursor: pointer;
-      color: #bf964e;
+      color: #9bae6a;
       transition: 0.1s;
       line-height: 1;
     }
     .modal-close:hover {
-      color: #8c642f;
+      color: #5e7036;
       transform: scale(1.05);
     }
 
@@ -364,7 +364,7 @@
       background: #fffcf5;
       border-radius: 1.5rem;
       padding: 1rem;
-      border: 1px solid #f1e2c8;
+      border: 1px solid #e2e4ca;
       transition: all 0.1s;
       align-items: center;
       flex-wrap: wrap;
@@ -378,13 +378,13 @@
       flex-shrink: 0;
       width: 85px;
       height: 85px;
-      background: #fef3e2;
+      background: #f4f2e2;
       border-radius: 28px;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      border: 1px solid #f0ddbc;
+      border: 1px solid #d6dfb6;
     }
     .herb-img img {
       width: 100%;
@@ -398,7 +398,7 @@
     .herb-name {
       font-weight: 700;
       font-size: 1.2rem;
-      color: #856534;
+      color: #6a7a3a;
       display: flex;
       align-items: center;
       gap: 6px;
@@ -406,42 +406,80 @@
     }
     .herb-name::before {
       content: "✧";
-      color: #d6a847;
+      color: #b8b86a;
     }
     .herb-desc {
       font-size: 0.85rem;
-      color: #3b2e1e;
+      color: #3b3a2a;
       margin-top: 5px;
       line-height: 1.4;
     }
     .herb-benefit {
       margin-top: 6px;
-      background: #fef2e2;
+      background: #f1f4e2;
       display: inline-block;
       padding: 0.2rem 0.8rem;
       border-radius: 40px;
       font-size: 0.7rem;
       font-weight: 500;
-      color: #a57133;
+      color: #8a7a42;
+    }
+    /* special instruction block for salve usage */
+    .usage-instructions {
+      background: #f2f4e6;
+      border-radius: 1.2rem;
+      padding: 1rem 1.2rem;
+      margin-top: 1rem;
+      border-left: 5px solid #9bb06a;
+      font-size: 0.8rem;
+      line-height: 1.45;
+      color: #4a5a2e;
+    }
+    .usage-instructions strong {
+      color: #6a7a3a;
+      font-weight: 600;
     }
     .special-note {
-      background: #fcf3e2;
+      background: #f2f4e6;
       border-radius: 32px;
       padding: 0.9rem 1.2rem;
       margin-top: 1.8rem;
       font-size: 0.85rem;
-      color: #816d46;
-      border-left: 5px solid #e5bc74;
+      color: #6a7a3a;
+      border-left: 5px solid #bccf96;
       text-align: center;
     }
+    
+    /* Disclaimer styling - forest green accents */
+    .disclaimer-box {
+      margin-top: 2.5rem;
+      padding: 1rem 1.5rem;
+      background: #fafbf2;
+      border-radius: 28px;
+      border: 1px solid #ced8ae;
+      color: #5a6a38;
+      font-size: 0.7rem;
+      text-align: center;
+      line-height: 1.5;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 2px 6px rgba(60, 70, 30, 0.05);
+    }
+    .disclaimer-box strong {
+      color: #6a7a3a;
+      font-weight: 600;
+    }
+    
     footer {
       text-align: center;
-      margin-top: 3.5rem;
+      margin-top: 2rem;
       font-size: 0.7rem;
-      color: #b69457;
-      border-top: 1px solid #eedfbf;
-      padding-top: 1.8rem;
+      color: #8a9a5a;
+      border-top: 1px solid #dee2be;
+      padding-top: 1.5rem;
     }
+    
     @media (max-width: 680px) {
       .container {
         padding: 1rem;
@@ -466,24 +504,30 @@
       .hero-header::before {
         height: 130px;
       }
+      .disclaimer-box {
+        margin-top: 2rem;
+        padding: 0.8rem 1rem;
+      }
+      .usage-instructions {
+        padding: 0.8rem 1rem;
+      }
     }
   </style>
 </head>
 <body>
-<div class="golden-aura"></div>
+<div class="green-aura"></div>
 <div class="container">
   <div class="hero-header">
     <div class="logo-wrapper">
       <span class="sprout-left">🌿</span>
-      <!-- UPDATED: Roots logo + additional brand logo side by side, using the new Roots-logo and keeping original? We'll use both: Roots-logo.png as main, plus the previous logo optional? According to request: use these instead for the graphics for the logo: the two provided links (Sleepy Time Tea image link is for tea product, not logo). The user provided: Roots logo link and also previous logo? We'll show the new Roots logo as primary logo. -->
       <img class="logo-img" src="https://i.ibb.co/XH7mmTh/Roots-logo.png" alt="Sovereign Roots Logo" onerror="this.src='https://placehold.co/200x80?text=Sovereign+Roots';">
       <span class="sprout-right">🌿</span>
     </div>
-    <div class="brand-tagline">rooted in healing · golden apothecary</div>
+    <div class="brand-tagline">rooted in healing · herbal products</div>
   </div>
 
   <div class="products-grid">
-    <!-- Pain Salve Card: updated image Pain.png -->
+    <!-- Pain Salve Card -->
     <div class="product-card" data-product="salve">
       <div class="product-img">
         <img src="https://i.ibb.co/4gY8rGQR/Pain.png" alt="Pain Salve Tin">
@@ -499,11 +543,11 @@
       </div>
     </div>
 
-    <!-- Sleepy Time Tea Card: updated image Sleepy-Tea.png -->
+    <!-- Sleepy Time Tea Card -->
     <div class="product-card" data-product="tea">
       <div class="product-img">
         <img src="https://i.ibb.co/jkytpnyz/Sleepy-Tea.png" alt="Sleepy Time Tea Bag">
-        <div class="badge-size">5 tea bags + whole anise piece</div>
+        <div class="badge-size">5 tea bags w/ a star anise in each</div>
       </div>
       <div class="product-info">
         <div class="product-title">Sleepy Time Tea</div>
@@ -515,7 +559,14 @@
       </div>
     </div>
   </div>
-  <footer>Sovereign Roots — crafted with golden intention & plant wisdom by Jessilyn </footer>
+  
+  <!-- Medical Disclaimer -->
+  <div class="disclaimer-box">
+    <strong>🌿 Herbal Information Disclaimer 🌿</strong><br>
+    These products are not intended to diagnose, treat, cure, or prevent any disease. The information provided is for educational purposes only and does not replace professional medical advice. Please consult with a qualified healthcare provider or your doctor before starting any new herbal regimen, especially if you are pregnant, nursing, taking medications, or have a medical condition. Sovereign Roots honors traditional herbal wisdom but encourages responsible and informed use.
+  </div>
+  
+  <footer>Sovereign Roots — crafted with golden intention & plant wisdom by Jessily, All Rights Reserved</footer>
 </div>
 
 <!-- Modal overlay for detailed herbs with images -->
@@ -531,27 +582,38 @@
 </div>
 
 <script>
-  // DIRECT IMAGE MAPPING using your i.ibb.co URLs (herb images remain same, as no new links provided for herbs)
+  // Updated herb image mapping with all new provided links
   const herbImageMap = {
-    "Comfrey": "https://i.ibb.co/bMBc83fv/Screenshot-2026-04-02-154119.png",
+    "Comfrey": "https://i.ibb.co/szBFzfp/Comfrey.png",
     "Wild Lettuce": "https://i.ibb.co/xSSS8zWk/Screenshot-2026-04-02-154217.png",
     "White Willow Bark": "https://i.ibb.co/jkTK2xtw/Screenshot-2026-04-02-154155.png",
-    "Passion Flower": "https://i.ibb.co/XZ1F3WSW/Screenshot-2026-04-02-154131.png",
-    "Beeswax": "https://i.ibb.co/FkgYFv4v/Screenshot-2026-04-02-154235.png",
-    "Shea Butter": "https://i.ibb.co/xKTBkhq6/Screenshot-2026-04-02-154246.png",
-    "Lavender": "https://i.ibb.co/fY7w1mT3/Screenshot-2026-04-02-154106.png",
-    "Chamomile": "https://i.ibb.co/99BYgXv8/Screenshot-2026-04-02-154023.png",
-    "Calendula": "https://i.ibb.co/VWR330RD/Screenshot-2026-04-02-154142.png",
-    "Anise (Star Anise)": "https://i.ibb.co/0yYTH8KX/Screenshot-2026-04-02-154256.png"
+    "Passion Flower": "https://i.ibb.co/0jTbtHV9/Passion-Flower.png",
+    "Beeswax": "https://i.ibb.co/bjngPqLc/Bees-Wax.png",
+    "Shea Butter": "https://i.ibb.co/PsVP0v5J/Shea-Butter.png",
+    "Lavender": "https://i.ibb.co/zhyy4BCY/Lavender.png",
+    "Chamomile": "https://i.ibb.co/Vcf01G92/Chamomile.png",
+    "Calendula": "https://i.ibb.co/zTXB98cm/Calendula.png",
+    "Anise (Star Anise)": "https://i.ibb.co/WNCgs4cd/Star-Anise.png"
   };
 
-  // Full detailed data for each herb (description + benefits)
+  // Full detailed data for each herb + salve usage instructions (condensed comfrey guidelines)
   const productsDetailed = {
     salve: {
       name: "Pain Salve",
-      specialNote: "🌟 Apply externally to sore muscles, joints, or tired areas. Contains beeswax & shea butter for deep moisture and protection. Discontinue if irritation occurs.",
+      specialNote: "🌟 Apply externally to sore muscles & joints. Contains beeswax & shea butter for deep moisture. Discontinue if irritation occurs.",
+      usageInstructions: `
+        <div class="usage-instructions">
+          <strong>📋 Directions for Use (Comfrey Safety Guidelines):</strong><br>
+          • Apply a pea-sized amount (≈¼ teaspoon) to affected area. Gently massage until absorbed.<br>
+          • Use up to 3 times daily as needed.<br>
+          • <strong>Duration limit:</strong> Use for no more than 4–6 weeks consecutively, then take a 2-week break. Do not exceed 6 weeks of use per year.<br>
+          • <strong>Application tips:</strong> Apply only to intact, unbroken skin. Avoid face, eyes, and mucous membranes. Wash hands thoroughly after each use (unless treating hands).<br>
+          • <strong>Warnings:</strong> For external use only. Do not ingest. Discontinue if rash or irritation occurs. Do not use if pregnant, nursing, or have liver/kidney disease. If you have an aspirin allergy, consult a doctor before use. Keep out of reach of children and pets.<br>
+          • <strong>Storage:</strong> Store in a cool, dry place away from sunlight.
+        </div>
+      `,
       herbs: [
-        { name: "Comfrey", description: "Comfrey (Symphytum officinale) accelerates skin regeneration & soothes inflammation. Rich in allantoin, it supports cellular repair for aching tissues.", benefit: "💚 Benefits: reduces joint discomfort, promotes healing, calms swelling." },
+        { name: "Comfrey", description: "Comfrey (Symphytum officinale) accelerates skin regeneration & soothes inflammation. Rich in allantoin, it supports cellular repair for aching tissues. Important: follow duration guidelines to limit pyrrolizidine alkaloid exposure.", benefit: "💚 Benefits: reduces joint discomfort, promotes healing, calms swelling." },
         { name: "Wild Lettuce", description: "Wild lettuce (Lactuca virosa) acts as a mild sedative analgesic. Traditional use for nerve pain & muscle tension, easing sharp discomfort.", benefit: "💛 Benefits: eases nerve pain, relaxes tight muscles, natural comfort." },
         { name: "White Willow Bark", description: "Known as 'nature's aspirin', white willow bark contains salicin for pain relief. Used for centuries to soothe headaches, arthritis, and general aches.", benefit: "🤍 Benefits: anti-inflammatory, reduces chronic pain & fever." },
         { name: "Passion Flower", description: "Passion flower (Passiflora incarnata) calms nervous tension and muscular spasms. In salve, it helps relax stressed nerves and sore spots.", benefit: "💜 Benefits: calms nerve pain, reduces restlessness, eases tension." },
@@ -588,7 +650,7 @@
       herbsHtml += `
         <div class="herb-card-modal">
           <div class="herb-img">
-            <img src="${imgUrl}" alt="${herb.name}" loading="lazy">
+            <img src="${imgUrl}" alt="${herb.name}" loading="lazy" onerror="this.src='https://placehold.co/85x85?text=${encodeURIComponent(herb.name.slice(0,3))}'">
           </div>
           <div class="herb-info">
             <div class="herb-name">${herb.name}</div>
@@ -597,6 +659,10 @@
           </div>
         </div>
       `;
+    }
+    // Insert usage instructions for salve after herbs list
+    if (productKey === 'salve' && data.usageInstructions) {
+      herbsHtml += data.usageInstructions;
     }
     modalHerbContent.innerHTML = herbsHtml;
     modalSpecialNote.innerHTML = data.specialNote;
