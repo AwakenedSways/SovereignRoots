@@ -35,3 +35,19 @@ Visit the live website: [[[https://awakenedsways.github.io/SovereignRoots/](http
 This site is for informational purposes only. Always consult a healthcare provider before starting any new herbal regimen.
 
 ## 📁 File Structure
+
+## 🚀 Deployment
+This site is deployed using GitHub Pages. The main branch serves the live site.
+
+## 📝 License
+All rights reserved. Content and design © Sovereign Roots.
+
+## ⚠️ Disclaimer
+The information provided on this site is for educational purposes only and does not constitute medical advice. These statements have not been evaluated by the FDA. Sovereign Roots products are not intended to diagnose, treat, cure, or prevent any disease.
+
+## 📞 Contact
+For questions about this website or Sovereign Roots products, please reach out directly.
+
+---
+
+*Crafted with golden intention & plant wisdom - by Jessilyn All rights reserved.* 🌱
